@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   $(".message_header").click(function() {
     $(".message_content").slideToggle("slow");
-    $(".input_box").toggle("slow");
   });
 
   $(".close").click(function() {
@@ -18,11 +17,10 @@ $(document).ready(function() {
     $(".input_box").show();
   });
 
-  // Arrow Button
   $(".enter").click(function() {
     var msg = $(".message_input").val();
     if (msg != "") {
-      $(".new_messages").append('<p class="my_message">' + msg + "</p>");
+      $(".new_messages").append("<p>" + msg + "</p>");
       $(".message_input").val("");
     }
   });
