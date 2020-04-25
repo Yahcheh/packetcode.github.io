@@ -1,6 +1,6 @@
 // Required variables
-var session_seconds = "00";
-var session_minutes = 25;
+var minutes = 25;
+var seconds = "00";
 
 // Audio files
 var click_sound = new Audio("click.mp3");
@@ -8,20 +8,20 @@ var bell = new Audio("bell.mp3");
 
 // Starting template for the timer
 function template() {
-  document.getElementById("minutes").innerHTML = session_minutes;
-  document.getElementById("seconds").innerHTML = session_seconds;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
 }
 
 function start_timer() {
   click_sound.play();
 
   // Change the minutes and seconds to starting time
-  session_minutes = 24;
-  session_seconds = 59;
+  minutes = 24;
+  seconds = 59;
 
   // Add the seconds and minutes to the page
-  document.getElementById("minutes").innerHTML = session_minutes;
-  document.getElementById("seconds").innerHTML = session_seconds;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
 
   // Start the countdown
   var minutes_interval = setInterval(minutesTimer, 60000);
@@ -30,19 +30,19 @@ function start_timer() {
   // Functions
   // Function for minute counter
   function minutesTimer() {
-    session_minutes = session_minutes - 1;
-    document.getElementById("minutes").innerHTML = session_minutes;
+    minutes = minutes - 1;
+    document.getElementById("minutes").innerHTML = minutes;
   }
 
   // Function for second counter
   function secondsTimer() {
-    session_seconds = session_seconds - 1;
-    document.getElementById("seconds").innerHTML = session_seconds;
+    seconds = seconds - 1;
+    document.getElementById("seconds").innerHTML = seconds;
 
     // Check if the seconds and minutes counter has reached 0
     // If reached 0 then end the session
-    if (session_seconds <= 0) {
-      if (session_minutes <= 0) {
+    if (seconds <= 0) {
+      if (minutes <= 0) {
         // Clears the interval i.e. stops the counter
         clearInterval(minutes_interval);
         clearInterval(seconds_interval);
@@ -59,7 +59,7 @@ function start_timer() {
       }
 
       // Reset the session seconds to 60
-      session_seconds = 60;
+      seconds = 60;
     }
   }
 }
