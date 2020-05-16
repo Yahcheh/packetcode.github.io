@@ -26,13 +26,11 @@ body {
 
 /* Main Container height*/
 .main-container {
-  min-height: 100vh;
-  padding-top: 5rem;
+  height: 100vh;
 }
 
 /* Aligning items in main row */
 .main_row {
-  /* height: 80vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +44,7 @@ body {
 /* Making the main image the size of the screen */
 .main_row img {
   width: auto;
-  height: 56.9rem;
+  height: 100vh;
 }
 
 /* About Section */
